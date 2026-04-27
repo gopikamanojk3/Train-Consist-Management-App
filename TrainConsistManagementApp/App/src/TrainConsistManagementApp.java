@@ -35,5 +35,6 @@ public class TrainConsistManagementApp {
         System.out.println(passengerBogies);
 
         System.out.println("\nUC2 operations completed successfully...");
+
     }
 }
