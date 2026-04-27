@@ -1,25 +1,32 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
-public class TrainConsistUC1 {
+public class TrainConsistManagementApp {
     public static void main(String[] args) {
 
         System.out.println("====================================");
-        System.out.println("  Train Consist Management App");
+        System.out.println(" UC3 - Track Unique Bogie IDs ");
         System.out.println("====================================\n");
 
-        // Initialize empty train consist using ArrayList
-        List<String> trainConsist = new ArrayList<>();
+        // Create HashSet for bogie IDs (ensures uniqueness)
+        Set<String> bogieIds = new HashSet<>();
 
-        // Display initialization message
-        System.out.println("Train initialized successfully...");
+        // Add bogie IDs (including duplicates intentionally)
+        bogieIds.add("BG104");
+        bogieIds.add("BG103");
+        bogieIds.add("BG102");
+        bogieIds.add("BG101");
+        bogieIds.add("BG101"); // duplicate
+        bogieIds.add("BG102"); // duplicate
 
-        // Display initial bogie count
-        System.out.println("Initial Bogie Count : " + trainConsist.size());
+        // Display final set
+        System.out.println("Bogie IDs After Insertion:");
+        System.out.println(bogieIds);
 
-        // Display current consist
-        System.out.println("Current Train Consist : " + trainConsist);
+        // Note about duplicates
+        System.out.println("\nNote:");
+        System.out.println("Duplicates are automatically ignored by HashSet.");
 
-        System.out.println("\nSystem ready for operations...");
+        System.out.println("\nUC3 uniqueness validation completed...");
     }
 }
