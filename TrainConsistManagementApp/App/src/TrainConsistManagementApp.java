@@ -1,54 +1,43 @@
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.Arrays;
+import java.util.List;
 
-class TrainConsistManagementApp {
-    private String type;
-    private int capacity;
+class Bogie {
+    String type;
+    int capacity;
 
-    public Bogie(String type, int capacity) {
+    Bogie(String type, int capacity) {
         this.type = type;
         this.capacity = capacity;
-    }
-
-    public String getType() {
-        return type;
     }
 
     public int getCapacity() {
         return capacity;
     }
-
-    @Override
-    public String toString() {
-        return "Capacity -> " + capacity;
-    }
 }
 
-public class TrainConsistManagementApp {
+public class TrainConsistApp {
     public static void main(String[] args) {
-        // Step 1: Create list of bogies
+        System.out.println("==========================================");
+        System.out.println("UC10 - Count Total Seats in Train");
+        System.out.println("==========================================");
+
+        // 1. Create a list of bogies
         List<Bogie> bogies = Arrays.asList(
                 new Bogie("Sleeper", 72),
                 new Bogie("AC Chair", 56),
                 new Bogie("First Class", 24),
-                new Bogie("Sleeper", 70),
-                new Bogie("AC Chair", 60)
+                new Bogie("Sleeper", 70)
         );
 
-        System.out.println("=========================================================");
-        System.out.println("UC9 - Group Bogies by Type");
-        System.out.println("=========================================================");
+        System.out.println("Bogies in Train:");
+        bogies.forEach(b -> System.out.println(b.type + " -> " + b.capacity));
 
-        // Step 2: Group bogies using Collectors.groupingBy
-        Map<String, List<Bogie>> groupedBogies = bogies.stream()
-                .collect(Collectors.groupingBy(Bogie::getType));
+        // 2. Stream Pipeline: map() to extract capacity, reduce() to sum
+        int totalCapacity = bogies.stream()
+                .map(Bogie::getCapacity) // Extract numeric values
+                .reduce(0, Integer::sum); // Aggregate into total
 
-        // Step 3: Display grouped result
-        groupedBogies.forEach((type, bogieList) -> {
-            System.out.println("\nBogie Type: " + type);
-            bogieList.forEach(System.out::println);
-        });
-
-        System.out.println("\nUC9 grouping completed...");
+        System.out.println("\nTotal Seating Capacity of Train: " + totalCapacity);
+        System.out.println("\nUC10 aggregation completed...");
     }
 }
