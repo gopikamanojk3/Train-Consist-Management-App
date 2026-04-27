@@ -1,40 +1,25 @@
 import java.util.ArrayList;
+import java.util.List;
 
-public class TrainConsistManagementApp {
+public class TrainConsistUC1 {
     public static void main(String[] args) {
 
         System.out.println("====================================");
-        System.out.println(" UC2 - Add Passenger Bogies to Train ");
+        System.out.println("  Train Consist Management App");
         System.out.println("====================================\n");
 
-        // Create ArrayList for passenger bogies
-        ArrayList<String> passengerBogies = new ArrayList<>();
+        // Initialize empty train consist using ArrayList
+        List<String> trainConsist = new ArrayList<>();
 
-        // Add bogies
-        passengerBogies.add("Sleeper");
-        passengerBogies.add("AC Chair");
-        passengerBogies.add("First Class");
+        // Display initialization message
+        System.out.println("Train initialized successfully...");
 
-        // Display after adding
-        System.out.println("After Adding Bogies:");
-        System.out.println("Passenger Bogies : " + passengerBogies);
+        // Display initial bogie count
+        System.out.println("Initial Bogie Count : " + trainConsist.size());
 
-        // Remove a bogie (AC Chair)
-        passengerBogies.remove("AC Chair");
+        // Display current consist
+        System.out.println("Current Train Consist : " + trainConsist);
 
-        System.out.println("\nAfter Removing 'AC Chair':");
-        System.out.println("Passenger Bogies : " + passengerBogies);
-
-        // Check if 'Sleeper' exists
-        System.out.println("\nChecking if 'Sleeper' exists:");
-        boolean exists = passengerBogies.contains("Sleeper");
-        System.out.println("Contains Sleeper? : " + exists);
-
-        // Final consist
-        System.out.println("\nFinal Train Passenger Consist:");
-        System.out.println(passengerBogies);
-
-        System.out.println("\nUC2 operations completed successfully...");
-
+        System.out.println("\nSystem ready for operations...");
     }
 }
