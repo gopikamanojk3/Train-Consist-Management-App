@@ -12,7 +12,7 @@ class Bogie {
     }
 }
 
-public class PerformanceBenchmarkingApp {
+public class TrainConsistManagementApp {
     public static void main(String[] args) {
         System.out.println("==========================================");
         System.out.println("UC13 - Performance Comparison (Loops vs Streams)");
